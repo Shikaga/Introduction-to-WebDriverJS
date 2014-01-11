@@ -100,4 +100,35 @@ searchBox.sendKeys('webdriver');' and hopefully helps you see what is going on.
 
 Notice also, that the parameter passed, is a Promise. If this seems surprising to you, get used to it, almost everything in WebdriverJS is.
 
+Now, in this example, we have seen how a single Promise can have *then()* invoked on it multiple times and they will be invoked in order.
 
+However, what if you wanted to perform another action. For example let us say that we wanted to search for the text on the Search button. This will take five different asynchronous calls, as follows:
+
+Locate the Search Button
+Get its Text
+Locate the Search Field
+Send the Text as Keys to it
+Click Search Button
+
+Now, the niece case would be to do the following:
+
+	var btnK = driver.findElement(webdriver.By.name('btnK'));
+	var btnText = btnK.getText();
+
+	var searchBox = driver.findElement(webdriver.By.name('q'));
+	searchBox.sendKeys(btnText);
+
+But remember, we are using Promises. *btnK.getText()* returns not the text, but a Promise for the Text.
+
+So, we need to handle this in a *then()*
+
+	var btnK = driver.findElement(webdriver.By.name('btnK'));
+	btnK.getText().then(function(text) {
+		var searchBox = driver.findElement(webdriver.By.name('q'));
+		searchBox.sendKeys(text);
+	})
+	btnK.click();
+
+And that is the basics of Promises.
+
+There are many other subtleties to Promises, but this should be enough to get you going.
