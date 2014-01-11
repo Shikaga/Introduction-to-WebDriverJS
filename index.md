@@ -50,29 +50,29 @@ But, on a practical note, you have to use Promises because they are the foundati
 
 Getting Started Code:
 
-var webdriver = require('selenium-webdriver');
+	var webdriver = require('selenium-webdriver');
 
-var driver = new webdriver.Builder().
-	withCapabilities(webdriver.Capabilities.chrome()).
-	build();
+	var driver = new webdriver.Builder().
+		withCapabilities(webdriver.Capabilities.chrome()).
+		build();
 
-driver.get('http://www.google.com');
-var searchBox = driver.findElement(webdriver.By.name('q'));
-searchBox.sendKeys('webdriver');
-searchBox.sendKeys('JS');
-searchBox.sendKeys(' ');
-searchBox.sendKeys('Rocks');
+	driver.get('http://www.google.com');
+	var searchBox = driver.findElement(webdriver.By.name('q'));
+	searchBox.sendKeys('webdriver');
+	searchBox.sendKeys('JS');
+	searchBox.sendKeys(' ');
+	searchBox.sendKeys('Rocks');
 
-var btnG = driver.findElement(webdriver.By.name('btnG'));
-btnG.click();
+	var btnG = driver.findElement(webdriver.By.name('btnG'));
+	btnG.click();
 
-driver.wait(function() {
-	return driver.getTitle().then(function(title) {
-		return title.indexOf('webdriver') !== -1;
-	});
-}, 1000);
+	driver.wait(function() {
+		return driver.getTitle().then(function(title) {
+			return title.indexOf('webdriver') !== -1;
+		});
+	}, 1000);
 
-driver.quit();
+	driver.quit();
 
 Above is the example code given on the WebdriverJS website.
 
