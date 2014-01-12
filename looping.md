@@ -19,7 +19,7 @@ Now, the Navbar is logically enough, implemented as a Unorded List, which has a 
 So, in a typical impelemntation of Webdriver, we might want to do something like this.
 
 <a name="typical">
-[Typical Implementation](#typical)
+Typical Implementation
 ----------------------
 
 	var ul = driver.findElement(By.id('nav'));
@@ -35,7 +35,7 @@ unworkable in WebdriverJS, as it uses Promises. When first using WebdriverJS, on
 mistakenly try to do the following:
 
 <a name="wrong">
-[Wrong WebdriverJS Implementation](#wrong)
+Wrong WebdriverJS Implementation
 --------------------------------
 
 	var webdriver = require('selenium-webdriver');
@@ -66,7 +66,7 @@ But now we are in a bit of trouble. We are only really interested in all the val
 course apply a *then()* method to each promise in *liText*, this will become very messy: perhaps there is a better way.
 
 <a name="correct"></a>
-[Correct Implementation](#correct)
+Correct Implementation
 ----------------------
 
 	var webdriver = require('selenium-webdriver');
