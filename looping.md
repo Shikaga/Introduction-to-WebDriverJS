@@ -65,6 +65,10 @@ an array of Promises.
 But now we are in a bit of trouble. We are only really interested in all the value simultaneously. While we could of
 course apply a *then()* method to each promise in *liText*, this will become very messy: perhaps there is a better way.
 
+<a name="q"></a>
+[Q.js](#q)
+----------
+
 This is where a certain external Promise library becomes useful: Q.js
 
 Q.js provides a feature, [*.all*](https://github.com/kriskowal/q#combination), which will allow us to
