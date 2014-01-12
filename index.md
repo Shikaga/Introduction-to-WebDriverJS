@@ -144,6 +144,7 @@ There are many other subtleties to Promises, but this should be enough to get yo
 
 <div id="disqus_thread"></div>
 <script type="text/javascript">
+
 /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
 var disqus_shortname = 'shikagagithub'; // required: replace example with your forum shortname
 /* * * DON'T EDIT BELOW THIS LINE * * */
