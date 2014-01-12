@@ -18,7 +18,7 @@ Now, the Navbar is logically enough, implemented as a Unorded List, which has a 
 
 So, in a typical impelemntation of Webdriver, we might want to do something like this.
 
-<a name="typical">
+<a name="typical"></a>
 [Typical Implementation](#typical)
 ----------------------
 
@@ -34,7 +34,7 @@ This is a perfectly reasonable way of doing things in a synchronous language, bu
 unworkable in WebdriverJS, as it uses Promises. When first using WebdriverJS, one may
 mistakenly try to do the following:
 
-<a name="wrong">
+<a name="wrong"></a>
 [Wrong WebdriverJS Implementation](#wrong)
 --------------------------------
 
