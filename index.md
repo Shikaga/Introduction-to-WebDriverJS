@@ -12,7 +12,8 @@ There are no or at least very few, tutorials, apis, stack exchanges and so forth
 
 So, after a few weeks of smashing my head against it (largely due to my own ignorance), I will be writing a few blogs to hopefully steer others around the mistakes I made.
 
-PROMISES<a name="promises"></a>
+<a name="promises"></a>
+PROMISES
 --------
 
 Before you can get started using WebdriverJS, you need to understand the Promises Pattern, as Promises are the core upon which WebdriverJS is written.
@@ -21,7 +22,8 @@ I am sure that in a few years time Promises will be so fundamental and obvious a
 
 If you want to get a professional description, see [HTML5 Rocks](http://www.html5rocks.com/en/tutorials/es6/promises/) or [Q.JS](https://github.com/kriskowal/q#introduction). If you understood these, then feel free to jump down to [Promises and WebDriverJS](#promisesAndWebdriver)
 
-My Description<a name="myDescription"></a>
+<a name="myDescription"></a>
+My Description
 --------------
 
 All that a Promise is, is an Object, which represents a value that exists or will exist at some point in the future.
@@ -53,7 +55,8 @@ But, on a practical note, you have to use Promises because they are the foundati
 
 One final thing, If you think that you understood all of that, [you know know what a Monad is](http://kybernetikos.com/2012/07/10/design-pattern-wrapper-with-composable-actions/).
 
-Promises and WebdriverJS<a name="promisesAndWebdriver"></a>
+<a name="promisesAndWebdriver"></a>
+Promises and WebdriverJS
 ------------------------
 
 Getting Started Code:
