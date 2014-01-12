@@ -49,8 +49,8 @@ mistakenly try to do the following:
 	var lis = ul.findElements(webdriver.By.tagName('li')); //findElements returns a Promise which will resolve
 		//to an Array of WebElements.
 
-	var liText = [];
 	lis.then(function(liArray) {
+		var liText = [];
 		liArray.forEach(function(li) {
 			liText.push(li.getText());
 		})
@@ -60,10 +60,20 @@ mistakenly try to do the following:
 	driver.quit();
 
 But sadly, even this won't work. And if you run this code you will notice that what gets logged, is, logically enough,
-and array of Promises.
+an array of Promises.
 
 But now we are in a bit of trouble. We are only really interested in all the value simultaneously. While we could of
 course apply a *then()* method to each promise in *liText*, this will become very messy: perhaps there is a better way.
+
+This is where a certain external Promise library becomes useful: Q.js
+
+Q.js provides a feature, [*.all*](https://github.com/kriskowal/q#combination), which will allow us to
+deal with multiple promises which will resolve at an arbitrary future time.
+
+First, remember to install it: *npm install q*
+
+Then we can use q as follows
+
 
 <a name="correct"></a>
 [Correct Implementation](#correct)
@@ -98,13 +108,3 @@ And here you can see how we can use *Q.all()* to combine all these individual pr
 with their resolved value in an Array.
 
 Hopefully that helps if you are trying to loop over values!
-
-This is where a certain external Promise library becomes useful: Q.js
-
-Q.js provides a feature, [*.all*](https://github.com/kriskowal/q#combination), which will allow us to
-deal with multiple promises which will resolve at an arbitrary future time.
-
-First, remember to install it: *npm install q*
-
-Then we can use q as follows
-
