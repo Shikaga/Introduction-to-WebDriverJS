@@ -10,20 +10,33 @@ in the [BBC News](http://www.bbc.co.uk/news/) navbar.
 
 Now, the Navbar is logically enough, implemented as a Unorded List, which has a header which has an identifier.
 
-So, in a typical impelemntation of Webdriver, we might need to do something like this.
+	<ul id='nav'>
+		<li>Text1</li>
+		<li>Text2</li>
+		...
+	</ul>
+
+So, in a typical impelemntation of Webdriver, we might want to do something like this.
+
+<a name="typical">
+[Typical Implementation](#typical)
+----------------------
 
 	var ul = driver.findElement(By.id('nav'));
-	var children = ul.findElements(By.tagName('li'));
+	var children = ul.findElements(By.tagName('li')); //Search for sub-elements of the ul
 	var childText = [];
 	for (var child in children) {
 		childText.push(child.getText());
 	}
 	console.log(childText());
 
-This is a perfectly reasonable way of doing things in a synchronous language, but is completely unworkable in
-WebdriverJS.
+This is a perfectly reasonable way of doing things in a synchronous language, but is of course completely
+unworkable in WebdriverJS, as it uses Promises. When first using WebdriverJS, one may
+mistakenly try to do the following:
 
-A nieve implementation in WebdriverJS might look something like this:
+<a name="wrong">
+[Wrong WebdriverJS Implementation](#wrong)
+--------------------------------
 
 	var webdriver = require('selenium-webdriver');
 
@@ -51,6 +64,10 @@ and array of Promises.
 
 But now we are in a bit of trouble. We are only really interested in all the value simultaneously. While we could of
 course apply a *then()* method to each promise in *liText*, this will become very messy: perhaps there is a better way.
+
+<a name="correct"></a>
+[Correct Implementation](#correct)
+----------------------
 
 	var webdriver = require('selenium-webdriver');
 	var Q = require('q');
